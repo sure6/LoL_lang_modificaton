@@ -9,6 +9,8 @@
 import os
 import sys
 import base64
+
+import psutil
 from PySide6 import QtWidgets
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QIcon
@@ -30,6 +32,16 @@ with open(r'D:\python-workspaces\LoL_lang_modificaton\img\korea.ico', 'wb') as w
 with open(r'D:\python-workspaces\LoL_lang_modificaton\img\lol.ico', 'wb') as w:
     w.write(base64.b64decode(league_of_legends_alt_macos_bigsur_icon_190029_ico))
 
+def proc_exist(process_name):
+    """
+    judge if the processing is starting
+    :param process_name: processing name
+    :return: processing id
+    """
+    pl = psutil.pids()
+    for pid in pl:
+        if psutil.Process(pid).name() == process_name:
+            return pid
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -55,11 +67,16 @@ class MyWidget(QtWidgets.QWidget):
 
     @Slot()
     def confirmation(self):
-        modify_file(lang=self.cb.currentText())
-        start_lol()
-        print(self.cb.currentText())
-        sys.exit(-1)
-        # QtWidgets.QMessageBox.about(self, "warning", "write successfully, please restart your client")
+        if isinstance(proc_exist('RiotClientUxRender.exe'), int):
+            print('RiotClientUxRender.exe is running')
+            QtWidgets.QMessageBox.warning(self, "warning", "LeagueClient is running")
+        else:
+            print(self.cb.currentText())
+            modify_file(lang=self.cb.currentText())
+            start_lol()
+            sys.exit(-1)
+
+
 
 
 if __name__ == "__main__":
