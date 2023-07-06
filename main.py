@@ -21,15 +21,15 @@ from image import league_of_legends_alt_macos_bigsur_icon_190029_ico, china_icon
 from read_config_file import modify_file, start_lol
 
 
-with open(r'D:\python-workspaces\LoL_lang_modificaton\img\china.ico', 'wb') as w:
+with open(r'.\img\china.ico', 'wb') as w:
     w.write(base64.b64decode(china_icon_127906_ico))
-with open(r'D:\python-workspaces\LoL_lang_modificaton\img\taiwan.ico', 'wb') as w:
+with open(r'.\img\taiwan.ico', 'wb') as w:
     w.write(base64.b64decode(taiwan_icon_127914_ico))
-with open(r'D:\python-workspaces\LoL_lang_modificaton\img\australia.ico', 'wb') as w:
+with open(r'.\img\australia.ico', 'wb') as w:
     w.write(base64.b64decode(australia_icon_127744_ico))
-with open(r'D:\python-workspaces\LoL_lang_modificaton\img\korea.ico', 'wb') as w:
+with open(r'.\img\korea.ico', 'wb') as w:
     w.write(base64.b64decode(krsouthkoreaflag_111691_ico))
-with open(r'D:\python-workspaces\LoL_lang_modificaton\img\lol.ico', 'wb') as w:
+with open(r'.\img\lol.ico', 'wb') as w:
     w.write(base64.b64decode(league_of_legends_alt_macos_bigsur_icon_190029_ico))
 
 def proc_exist(process_name):
@@ -53,6 +53,7 @@ class MyWidget(QtWidgets.QWidget):
         self.layout = QtWidgets.QVBoxLayout(self)
         self.cb = QComboBox()
         china_icon = QIcon(r"./img/china.ico")
+        print(china_icon)
         taiwan_icon = QIcon(r"./img/taiwan.ico")
         korea_icon = QIcon(r"./img/korea.ico")
         aus_icon = QIcon(r"./img/australia.ico")
@@ -86,11 +87,11 @@ if __name__ == "__main__":
     widget.resize(400, 300)
     widget.show()
     # remove pic after using
-    os.remove(r'D:\python-workspaces\LoL_lang_modificaton\img\china.ico')
-    os.remove(r'D:\python-workspaces\LoL_lang_modificaton\img\taiwan.ico')
-    os.remove(r'D:\python-workspaces\LoL_lang_modificaton\img\australia.ico')
-    os.remove(r'D:\python-workspaces\LoL_lang_modificaton\img\korea.ico')
-    os.remove(r'D:\python-workspaces\LoL_lang_modificaton\img\lol.ico')
+    os.remove(r'.\img\china.ico')
+    os.remove(r'.\img\taiwan.ico')
+    os.remove(r'.\img\australia.ico')
+    os.remove(r'.\img\korea.ico')
+    os.remove(r'.\img\lol.ico')
 
     sys.exit(app.exec())
 

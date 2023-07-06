@@ -30,7 +30,7 @@ def read_conf_file(file):
 # ko_KR zh_CN zh_TW en_AU
 def modify_file(lang="zh_CN"):
     files = find_files(directory, extension)
-    files_content = read_conf_file("league_of_legends.live.product_settings.yaml")
+    files_content = read_conf_file("img/league_of_legends.live.product_settings.yaml")
     # modify the lang
     new_contents = [content for content in files_content]
     print(new_contents)
