@@ -83,7 +83,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication([])
 
     widget = MyWidget()
-    widget.resize(500, 300)
+    widget.resize(400, 300)
     widget.show()
     # remove pic after using
     os.remove(r'D:\python-workspaces\LoL_lang_modificaton\img\china.ico')
