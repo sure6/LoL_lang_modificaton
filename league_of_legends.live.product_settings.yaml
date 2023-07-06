@@ -1,0 +1,20 @@
+auto_patching_enabled_by_player: false
+dependencies:
+    Direct X 9:
+        hash: "0ac41340bc803f35d7426a036411af7533aea4af6c1c2ba1b4dcab395fa2cf53"
+        phase: "Succeeded"
+        version: "1.0.0"
+locale_data:
+    available_locales:
+    - "en_AU"
+    default_locale: "en_AU"
+patching_policy: "manual"
+patchline_patching_ask_policy: "ask"
+product_install_full_path: "E:/Riot Games/League of Legends"
+product_install_root: "E:/Riot Games"
+settings:
+    create_shortcut: false
+    create_uninstall_key: true
+    locale: "en_AU"
+shortcut_name: "League of Legends.lnk"
+should_repair: false
