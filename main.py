@@ -68,8 +68,8 @@ class MyWidget(QtWidgets.QWidget):
 
     @Slot()
     def confirmation(self):
-        if isinstance(proc_exist('RiotClientUxRender.exe'), int):
-            print('RiotClientUxRender.exe is running')
+        if isinstance(proc_exist('RiotClientServices.exe'), int):
+            print('RiotClientServices.exe is running')
             QtWidgets.QMessageBox.warning(self, "warning", "LeagueClient is running")
         else:
             print(self.cb.currentText())
