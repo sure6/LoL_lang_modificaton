@@ -10,7 +10,7 @@
 
 import base64
 
-
+# convert image to python code.
 def pic2py(picture_names, py_name):
     write_data = []
     for picture_name in picture_names:
